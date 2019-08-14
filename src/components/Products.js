@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {  Link} from "react-router-dom"
 
-class News extends Component {
+class Products extends Component {
   constructor(props) {
     super(props);
     this.state = { 
@@ -9,23 +9,23 @@ class News extends Component {
       list:[
       	{
       		id:'1',
-      		title:'新闻0001'
+      		title:'商品0001'
       	},
       	{
       		id:'2',
-      		title:'新闻0002'
+      		title:'商品0002'
       	},
       	{
       		id:'3',
-      		title:'新闻0003'
+      		title:'商品0003'
       	},
       	{
       		id:'4',
-      		title:'新闻0004'
+      		title:'商品0004'
       	},
       	{
       		id:'5',
-      		title:'新闻0005'
+      		title:'商品0005'
       	}
       ]
      };
@@ -38,7 +38,7 @@ class News extends Component {
         		this.state.list.map(el=>{
         			return (
         				<li key={el.id}>
-        					<Link to={`/detail?aid=${el.id}`}>{el.title}</Link>
+        					<Link to={`/content/${el.id}`}>{el.title}</Link>
         				</li>
         			)
         		})
@@ -50,4 +50,4 @@ class News extends Component {
   }
 }
 
-export default News;
+export default Products;
