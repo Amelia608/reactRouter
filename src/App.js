@@ -8,12 +8,15 @@ import Products from './components/Products'
 import Content from './components/Content'
 import { BrowserRouter as Router, Route } from "react-router-dom"
 
+import 'antd/dist/antd.css';
+
 function App() {
   return (
     <div className="App">
        <Router>
       <div>
         <Header />
+
         <Route exact path="/" component={Home} />
         <Route path="/news" component={News} />
         <Route path="/detail" component={Detail} />

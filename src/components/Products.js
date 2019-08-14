@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import {  Link} from "react-router-dom"
+import { Row, Col, Card} from 'antd';
+const { Meta } = Card;
 
 class Products extends Component {
   constructor(props) {
@@ -33,17 +35,27 @@ class Products extends Component {
   render() {
     return (
       <div className="page_news">
-        <ul>
+       <Row gutter={16}>
         	{
         		this.state.list.map(el=>{
         			return (
-        				<li key={el.id}>
-        					<Link to={`/content/${el.id}`}>{el.title}</Link>
-        				</li>
+        			  <Col className="gutter-row" span={4} key={el.id}>
+						        <div className="gutter-box">
+						        	<Link to={`/content/${el.id}`}>
+						        		 <Card
+													    hoverable
+													    style={{ width: '100%',marginBottom:'20px' }}
+													    cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}
+													  >
+													    <Meta title="Europe Street beat" description="www.instagram.com" />
+					  							</Card>
+						        	</Link>
+						        </div>
+						    </Col>
         			)
         		})
         	}
-        </ul>
+         </Row>
       
       </div>
     );
